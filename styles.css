@@ -1,0 +1,12 @@
+.startButton {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background: #333 !important;
+}
+.stopButton {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background: #333 !important;
+}

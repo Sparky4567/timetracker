@@ -1,0 +1,11 @@
+{
+	"id": "simple-time-tracker",
+	"name": "Simple Time tracker plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Tracks your time spent on writing a note and creates a markdown table afterwards",
+	"author": "Sparky4567",
+	"authorUrl": "https://artefaktas.eu",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
