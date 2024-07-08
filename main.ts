@@ -123,8 +123,22 @@ export default class TimeTrackerPlugin extends Plugin {
 	}
 
 	logTimeToEditor(editor: CodeMirror.Editor, elapsedTime: number) {
-		const minutes = Math.round(elapsedTime / 6000) / 10; // Rounded to nearest tenth of a minute
-		const logEntry = `| ${new Date().toLocaleString()} | ${minutes} mins |\n`;
+		const minutes = Math.round(elapsedTime / 6000) / 10; // Rounde// Example variable (you can replace this with your actual calculation)
+
+		// Calculate hours, minutes, and seconds
+		const hours = Math.floor(minutes / 60);
+		const remainingMinutes = Math.floor(minutes % 60);
+		const remainingSeconds = Math.round((minutes % 1) * 60);
+
+		// Format the components to ensure they have two digits
+		const formattedHours = String(hours).padStart(2, "0");
+		const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+		const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+		// Construct the final string
+		const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+
+		const logEntry = `| ${new Date().toLocaleString()} | ${formattedTime} |\n`;
 
 		const tableHeader = `| ${this.settings.dateHeader} | ${this.settings.durationHeader} |\n|------|----------|\n`;
 		const logSectionHeader = `## ${this.settings.logSectionHeader}`;
